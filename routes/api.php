@@ -25,4 +25,4 @@ Route::post('/logout', [LogoutController::class, 'post']);
 Route::get('/user', [UsersController::class, 'get']);
 Route::put('/user', [UsersController::class, 'put']);
 
-Route::apiResource('/littlecleanings', LittleCleaningWController::class);
+Route::apiResource('/littlecleaningw', LittleCleaningWController::class);

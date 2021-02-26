@@ -14,10 +14,8 @@ class RegisterController extends Controller
         $now = Carbon::now();
         $hashed_password = Hash::make($request->password);
         $param = [
-            "name" => $request->name,
             "email" => $request->email,
             "password" => $hashed_password,
-            "profile" => $request->profile,
             "created_at" => $now,
             "updated_at" => $now,
         ];

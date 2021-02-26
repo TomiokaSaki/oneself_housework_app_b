@@ -22,7 +22,6 @@ class UsersController extends Controller
     public function put(Request $request)
     {
         $param = [
-            'profile' => $request->profile,
             'email' => $request->email
         ];
         DB::table('users')->where('email', $request->email)->update($param);
