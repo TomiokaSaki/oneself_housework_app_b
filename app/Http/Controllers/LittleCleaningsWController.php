@@ -60,20 +60,13 @@ class LittleCleaningsWController extends Controller
      */
     public function update(Request $request, CleaningListW $cleaningListW)
     {
-        $item = new CleaningListW;
-        $item->user_id = $request->user_id;
-        $item->spot = $request->spot;
-        $item->done = $request->done;
-        $item->save();
-        if ($item) {
-            return response()->json([
-                'message' => $item,
-            ], 200);
-        } else {
-            return response()->json([
-                'message' => 'Not found',
-            ], 404);
-        }
+        $update = [
+            'user_id' => $request->user_id,
+            'spot' => $request->spot,
+            'done' => $request->done
+        ];
+        CleaningListW::where('id', $cleaningListW->id)->update($update);
+
     }
 
     /**
@@ -84,14 +77,14 @@ class LittleCleaningsWController extends Controller
      */
     public function destroy(CleaningListW $cleaningListW)
     {
-        $item = CleaningListW::where('id', $cleaningListW->id)->delete();
-        if ($item) {
+        CleaningListW::where('id', $cleaningListW->id)->delete();
+        if ($cleaningListW) {
             return response()->json([
-                'message' => $item,
+                'message' => $cleaningListW,
             ], 200);
         } else {
             return response()->json([
-                'message' => $item,
+                'message' => $cleaningListW,
             ], 404);
         }
     }

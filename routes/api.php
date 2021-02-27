@@ -6,7 +6,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\UsersController;
-use App\Http\Controllers\LittleCleaningWController;
+use App\Http\Controllers\LittleCleaningsWController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +25,4 @@ Route::post('/logout', [LogoutController::class, 'post']);
 Route::get('/user', [UsersController::class, 'get']);
 Route::put('/user', [UsersController::class, 'put']);
 
-Route::apiResource('/littlecleaningw', LittleCleaningWController::class);
+Route::apiResource('/littlecleaningw', LittleCleaningsWController::class);
